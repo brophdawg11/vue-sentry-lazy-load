@@ -1,7 +1,10 @@
-# Vue 3 + Vite
+# Sample Sentry/Vue Integration
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This demonstrates an approach to lazily load the Sentry SDK upon encountering the first error in your application. This keeps the Sentry code out of your bundle on the critical path for the majority of your users who aren't seeing errors on page load (hopefully!)
 
-## Recommended IDE Setup
+**To Demo**
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- Clone this repo and run `npm ci`
+- Add your Sentry DSN to the `Sentry.init` call in `main.js`
+- `npm run dev`
+- Click the button to throw an error and watch Sentry get lazily loaded and capture the error

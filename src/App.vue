@@ -1,7 +1,12 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+function throwErrorOnClick() {
+  throw new Error("onClick error");
+}
 </script>
 
 <template>
-  <h1>Hi</h1>
+  <h1>Sentry Vue Demo</h1>
+  <button @click="throwErrorOnClick">
+    Click to throw an error in a click handler
+  </button>
 </template>
